@@ -16,11 +16,14 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		
-		
+		logger.info("index");
 		model.addAttribute("msg", "git 입니다!");
-		
 		return "home";
+	}
+	
+	@RequestMapping(value="/list")
+	public String list(Model model) {
+		return "list";
 	}
 	
 }
